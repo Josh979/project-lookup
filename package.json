@@ -2,6 +2,7 @@
   "name": "project-lookup",
   "version": "1.0.0",
   "private": true,
+  "author": "Josh Mielke",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
