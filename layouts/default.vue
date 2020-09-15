@@ -30,16 +30,30 @@
       <v-app-bar-nav-icon
         @click.stop="drawer = !drawer"
       />
-      <v-toolbar-title v-text="title" />
+      <div class="mt-7 ml-5"  @click.stop="projectDrawer = !projectDrawer">
+        <v-select dense
+                  label="Current Project"
+                  :items="projects"
+                  :menu-props="{ bottom: true, offsetY: true }"
+                  outlined
+                  @click.stop="projectDrawer = !projectDrawer"
+                  :value="selectedProject"
+        />
       <v-spacer />
+      </div>
+
+
     </v-app-bar>
     <v-main>
       <v-container>
-        <nuxt />
+        <template>
+          <transition name="fade-transition">
+            <nuxt />
+          </transition>
+        </template>
       </v-container>
     </v-main>
     <v-footer
-      :absolute="!fixed"
       app
     >
       <span>&copy; Josh Mielke </span>
@@ -51,19 +65,32 @@
 export default {
   data () {
     return {
-      clipped: false,
       drawer: false,
-      fixed: false,
-      projects: ['Blauers', 'Robertson\'s Honda'],
+      projectDrawer: false,
+      selectedProject: null,
+      projects: ['Abstract Sensualism Vineyards', 'Blauers', 'Robertson\'s Honda'],
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Dashboard',
+          title: 'Summary',
           to: '/'
-        }
+        },
+        {
+          icon: 'mdi-server',
+          title: 'Hosting',
+          to: '/hosting'
+        },
+        {
+          icon: 'mdi-laptop',
+          title: 'Website',
+          to: '/website'
+        },
       ],
       title: 'Project Details'
     }
+  },
+  created(){
+    this.selectedProject = this.projects[0];
   }
 }
 </script>

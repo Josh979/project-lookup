@@ -6,13 +6,55 @@
       <v-col>
         <v-card dark>
           <v-card-title>
-            Project Overview
+            Project Quick Look
           </v-card-title>
-          <v-card-text>
-          </v-card-text>
+          <v-row>
+            <v-col>
+              <v-stepper value="3" alt-labels >
+                <v-stepper-header>
+                  <v-stepper-step step="1" color="green" complete>
+                    <div class="text-center">
+                      <span class="d-block"><small>Design</small></span>
+<!--                      <v-icon>mdi-brush</v-icon>-->
+                    </div>
+                  </v-stepper-step>
+                  <v-divider></v-divider>
+                  <v-stepper-step color="green" step="2" complete>
+                    <div class="text-center">
+                      <span class="d-block"><small>Development</small></span>
+<!--                      <v-icon>mdi-code-tags</v-icon>-->
+                    </div>
+                  </v-stepper-step>
+                  <v-divider></v-divider>
+
+                  <v-stepper-step step="3">
+                    <div class="text-center" >
+                      <span class="d-block"><small>Content</small></span>
+<!--                      <v-icon>mdi-content-duplicate</v-icon>-->
+                    </div>
+                  </v-stepper-step>
+
+                  <v-divider></v-divider>
+                  <v-stepper-step step="4" complete-icon="mdi-file-find">
+                    <div class="text-center">
+                      <span class="d-block"><small>Review</small></span>
+<!--                      <v-icon>mdi-file-find</v-icon>-->
+                    </div>
+                  </v-stepper-step>
+                  <v-divider></v-divider>
+                  <v-stepper-step step="5" complete-icon="mdi-rocket">
+                    <div class="text-center">
+                      <span class="d-block"><small>Live</small></span>
+<!--                      <v-icon>mdi-rocket</v-icon>-->
+                    </div>
+                  </v-stepper-step>
+                </v-stepper-header>
+              </v-stepper>
+            </v-col>
+          </v-row>
         </v-card>
       </v-col>
-      <v-col cols="12" lg="4">
+      <v-col cols="12" lg="3">
         <v-card dark>
           <v-card-title>
             Monthly Budget Summary
@@ -41,7 +83,7 @@
           </v-row>
         </v-card>
       </v-col>
-      <v-col cols="12" lg="4">
+      <v-col cols="12" lg="3">
         <v-card dark>
           <v-card-title>
             Monthly Time Summary
@@ -67,51 +109,10 @@
           </v-row>
         </v-card>
       </v-col>
-      <v-col cols="12">
-        <v-expansion-panels>
-          <v-expansion-panel>
-            <v-expansion-panel-header class="headline">
-              Overview
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <div>Start Date:</div>
-              <div>Estimated Launch Date:</div>
-              <div>Launch Date:</div>
-              <div>Project Status: Active</div>
-              <div>Cancellation Date:</div>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-          <v-expansion-panel>
-            <v-expansion-panel-header class="headline">
-              Domains & DNS
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <div>Domain Name: example.com</div>
-              <div>Subdomains: None</div>
-              <div>Name Servers: Cloudflare</div>
-              <div>Name Server Cost: Free</div>
-              <div>Domain Cost: $9.99 Yearly</div>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-          <v-expansion-panel>
-            <v-expansion-panel-header class="headline">
-              Hosting
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <div>Hosted In House: True</div>
-              <div>Hosting Provider: GoDaddy</div>
-              <div>Hosting Type: Shared Hosting</div>
-              <div>Shared Hosting Account: shared.vulnerablehost.com</div>
-              <div>Hosting Cost: $9.99 Monthly</div>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
-      </v-col>
     </v-row>
   </v-layout>
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>
